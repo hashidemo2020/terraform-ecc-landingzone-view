@@ -1,19 +1,10 @@
 output "services_subnet_id" {
-  value = data.terraform_remote_state.subnet.outputs.services_subnet_id
+  value = data.terraform_remote_state.subnet.outputs.${var.bu_name}_services_subnet_id_v1
 }
 
 output "database_subnet_id" {
-  value = data.terraform_remote_state.subnet.outputs.database_subnet_id
+  value = data.terraform_remote_state.subnet.outputs.${var.bu_name}_database_subnet_id_v1
 }
-
-output "services_subnet_id_v2" {
-  value = data.terraform_remote_state.subnet.outputs.services_subnet_id
-}
-
-output "database_subnet_id_v2" {
-  value = data.terraform_remote_state.subnet.outputs.database_subnet_id
-}
-
 
 #just for testing -test
 output "uuid" {
