@@ -1,9 +1,13 @@
+locals {
+  outputs = data.terraform_remote_state.subnet.outputs
+}
+
 output "services_subnet_id" {
-  value = data.terraform_remote_state.subnet.outputs.bu1_services_subnet_id_v1
+  value = lookup(local.outputs, "${var.bu_name}_services_subnet_id_v1")
 }
 
 output "database_subnet_id" {
-  value = data.terraform_remote_state.subnet.outputs.bu1_database_subnet_id_v1
+  value = lookup(local.outputs, "${var.bu_name}_database_subnet_id_v1")
 }
 
 #just for testing -test
