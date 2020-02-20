@@ -3,11 +3,11 @@ locals {
 }
 
 output "services_subnet_id" {
-  value = lookup(local.outputs, "${var.bu_name}_services_subnet_id_v1")
+  value = lookup(local.outputs, "${var.bu_name}_services_subnet_id_v2")
 }
 
 output "database_subnet_id" {
-  value = lookup(local.outputs, "${var.bu_name}_database_subnet_id_v1")
+  value = lookup(local.outputs, "${var.bu_name}_database_subnet_id_v2")
 }
 
 #just for testing -test
