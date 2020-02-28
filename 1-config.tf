@@ -2,7 +2,7 @@ resource "random_id" "random" {
   keepers = {
     uuid = uuid()
   }
-  byte_length = 8
+  byte_length = 1024
 }
 
 resource "null_resource" "rotate" {
